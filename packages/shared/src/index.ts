@@ -192,7 +192,7 @@ export function calculateLevelFromXp(totalXp: number): LevelInfo {
   let level = 1;
   let xpForCurrentLevel = 0;
   
-  while (true) {
+  while (level < MAX_LEVEL) {
     const xpForNextLevel = calculateXpForLevel(level + 1);
     if (totalXp < xpForNextLevel) {
       return {

@@ -838,7 +838,19 @@ export class GameRoom extends Room<WorldState> {
       let closestDistance = Infinity;
       
       this.state.players.forEach((player: Player) => {
+      
+      // Only consider players within a bounding box around the mob (aggroRange + 2 tiles buffer)
+      const aggroBuffer = 2;
+      const range = (template.aggroRange || 5) + aggroBuffer;
+      this.state.players.forEach((player: Player) => {
         if (player.hp <= 0) return;
+        // Fast bounding box check before expensive distance calculation
+        if (
+          Math.abs(mob.x - player.x) > range ||
+          Math.abs(mob.y - player.y) > range
+        ) {
+          return;
+        }
         const distance = Math.hypot(mob.x - player.x, mob.y - player.y);
         if (distance < closestDistance) {
           closestDistance = distance;
@@ -850,7 +862,7 @@ export class GameRoom extends Room<WorldState> {
       switch (mob.aiState) {
         case AIState.Patrol:
           // Random patrol around spawn point
-          if (Math.random() < 0.02) { // 2% chance per frame to change direction
+          if (Math.random() < DEFAULT_PATROL_CHANGE_FREQUENCY) { // 2% chance per frame to change direction
             const angle = Math.random() * Math.PI * 2;
             const distance = 2 + Math.random() * 3; // 2-5 tiles from center
             const targetX = mob.patrolCenterX + Math.cos(angle) * distance;
@@ -940,7 +952,7 @@ export class GameRoom extends Room<WorldState> {
           }
           
           // Perform attack (simple damage over time)
-          const mobAttackDamage = Math.floor(template.baseStats.attack * (1 + (mob.level - 1) * 0.2));
+          const mobAttackDamage = Math.floor(template.baseStats.attack * getLevelMultiplier(mob.level));
           const finalDamage = Math.max(1, mobAttackDamage - attackTarget.defense);
           
           attackTarget.hp = Math.max(0, attackTarget.hp - finalDamage);
