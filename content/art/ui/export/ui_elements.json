@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "app": "Art Pipeline Demo",
+    "version": "1.0",
+    "format": "RGBA8888",
+    "size": {
+      "w": 256,
+      "h": 128
+    },
+    "scale": "1"
+  },
+  "frames": [
+    {
+      "filename": "button.png",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 96,
+        "h": 32
+      }
+    },
+    {
+      "filename": "panel.png",
+      "frame": {
+        "x": 0,
+        "y": 40,
+        "w": 128,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 80
+      }
+    },
+    {
+      "filename": "hp_bar_bg.png",
+      "frame": {
+        "x": 140,
+        "y": 0,
+        "w": 100,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 16
+      }
+    },
+    {
+      "filename": "hp_bar_fill.png",
+      "frame": {
+        "x": 140,
+        "y": 20,
+        "w": 100,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 16
+      }
+    },
+    {
+      "filename": "mp_bar_bg.png",
+      "frame": {
+        "x": 140,
+        "y": 40,
+        "w": 100,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 16
+      }
+    },
+    {
+      "filename": "mp_bar_fill.png",
+      "frame": {
+        "x": 140,
+        "y": 60,
+        "w": 100,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 16
+      }
+    },
+    {
+      "filename": "chat_bubble.png",
+      "frame": {
+        "x": 140,
+        "y": 80,
+        "w": 60,
+        "h": 48
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 60,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 60,
+        "h": 48
+      }
+    }
+  ]
+}

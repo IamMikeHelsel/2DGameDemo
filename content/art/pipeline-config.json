@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "pipeline": {
+    "tileSize": 32,
+    "atlasSize": 2048,
+    "padding": 4,
+    "layers": ["BASE", "OUTLINE", "SHADOW", "LIGHTMASK"],
+    "animationTags": {
+      "idle": ["idle_up", "idle_down", "idle_left", "idle_right"],
+      "walk": ["walk_up", "walk_down", "walk_left", "walk_right"],
+      "attack": ["attack_up", "attack_down", "attack_left", "attack_right"],
+      "hurt": ["hurt"],
+      "death": ["death"]
+    }
+  },
+  "tools": {
+    "aseprite": {
+      "version": ">=1.3.0",
+      "exportFormat": "json-array",
+      "exportOptions": {
+        "trim": true,
+        "sheetPack": true,
+        "innerPadding": 2
+      }
+    },
+    "texturePacker": {
+      "format": "phaser3",
+      "algorithm": "MaxRects",
+      "padding": 4,
+      "trim": true,
+      "powerOfTwo": true,
+      "maxSize": 2048
+    },
+    "tiled": {
+      "tileSize": 32,
+      "format": "json"
+    }
+  }
+}
